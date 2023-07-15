@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+@import "./reset.scss";
+
+@import "./variables.scss";
+
+html {
+    overflow-x: hidden;
+}
+
+body,
+p,
+div,
+span {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 40px;
+}
+.text__center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.slider__logos {
+    height: 100px;
+    object-fit: contain;
+}
+
+.mission {
+    .mission__row__one {
+        display: flex;
+        gap: 10px;
+        > * {
+            flex: 1;
+        }
+    }
+
+    .blueBg {
+        padding: 40px 80px;
+        background-color: $darkBlue;
+        color: $white;
+        justify-content: center;
+    }
+
+    .mission__row__two {
+        gap: 10px;
+        margin-top: 10px;
+        > *:not(:last-child) {
+            flex: 1;
+        }
+    }
+}
