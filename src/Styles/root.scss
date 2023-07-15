@@ -40,6 +40,13 @@ h6 {
 h3 {
     font-size: 40px;
 }
+
+h4 {
+    font-size: 24px;
+}
+h5 {
+    font-size: 21px;
+}
 .text__center {
     text-align: center;
 }
@@ -56,10 +63,50 @@ h3 {
     flex-direction: column;
 }
 
-.slider__logos {
-    height: 100px;
-    object-fit: contain;
+.pb-100 {
+    padding-bottom: 100px;
 }
+
+.main__button {
+    padding: 10px 35px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: 700;
+}
+.fluid__container {
+    max-width: 1200px;
+    margin: auto;
+}
+.heading {
+    max-width: 1000px;
+    margin: 0 auto 70px;
+}
+
+.mt-100 {
+    margin-top: 70px;
+}
+
+.section__heading {
+    font-size: 48px;
+
+    .blue {
+        color: $headingGreen;
+        font-size: inherit;
+    }
+}
+
+/* Logos */
+.logos {
+    .slider__logos {
+        height: 100px;
+        object-fit: contain;
+    }
+}
+
+/* Vision Mission */
 
 .mission {
     .mission__row__one {
@@ -82,6 +129,83 @@ h3 {
         margin-top: 10px;
         > *:not(:last-child) {
             flex: 1;
+        }
+    }
+}
+
+.our__value {
+    .our__value__row {
+        gap: 50px;
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            color: $darkBlue;
+            font-weight: bold;
+        }
+        p {
+            color: $textGray;
+            font-size: 16px;
+        }
+    }
+}
+
+/* About us*/
+
+.about__us {
+    background: url("../images/blueBg-vector.png") center center no-repeat;
+    padding: 100px 0;
+    background-size: cover;
+    .about__us__wrapper {
+        gap: 50px;
+        color: $white;
+        > div {
+            flex: 1;
+        }
+
+        .about__us__wrapper__left {
+            gap: 35px;
+            align-items: center;
+            position: relative;
+
+            > img {
+                position: absolute;
+
+                &:first-child {
+                    top: 0;
+                    left: 0;
+                }
+
+                &:last-child {
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/* Work with us */
+
+.work__with__us {
+    .work__with__us__images {
+        gap: 25px;
+        justify-content: center;
+        margin-bottom: 75px;
+    }
+    .work__with__us__usp {
+        gap: 15px;
+        justify-content: center;
+        > div {
+            margin-bottom: 50px;
+            width: calc(25% - 15px);
+
+            > img {
+                margin: 0 auto 30px;
+            }
         }
     }
 }

@@ -2,17 +2,26 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Logos } from "../Constants/UIConstants";
+import { Logos, ourValue, workWithUsUSP } from "../Constants/UIConstants";
 import "../Styles/root.scss";
 import Fireman from "../images/fire-man.png";
 import FiremanTwo from "../images/fire-man-two.png";
 import FireHelmet from "../images/fire-helmets.png";
+import AboutOne from "../images/about-us-1.png";
+import AboutTwo from "../images/about-us-2.png";
+import MainButton from "./MainButton";
+import FireExtinguisher from "../images/extinguisher.png";
+import Group from "../images/group-of-people.png";
+import FiremanMask from "../images/fireman-with-mask.png";
 
 const Home = () => {
     return (
         <section className="home">
             <LogoCarousel />
             <Mission />
+            <OurValue />
+            <AboutUs />
+            <WorkWithUs />
         </section>
     );
 };
@@ -27,10 +36,10 @@ const LogoCarousel = () => {
         slidesToScroll: 1,
     };
     return (
-        <div>
-            <h4 className="text__center">
+        <div className="logos pb-100">
+            <h5 className="text__center">
                 Trusted by several brands and clients
-            </h4>
+            </h5>
             <Slider {...settings}>
                 {Logos.map((logo) => (
                     <img className="slider__logos" src={logo.image} alt="" />
@@ -42,7 +51,7 @@ const LogoCarousel = () => {
 
 const Mission = () => {
     return (
-        <div className="mission">
+        <div className="mission pb-100">
             <div className="mission__row__one">
                 <img src={FireHelmet} alt="Fireman" />
                 <div className="mission__row__one__text flex flex-col blueBg">
@@ -73,4 +82,109 @@ const Mission = () => {
     );
 };
 
+const OurValue = () => {
+    return (
+        <div className="our__value fluid__container pb-100">
+            <div className="text__center heading">
+                <h2 className="section__heading">
+                    Our <span className="blue">value</span> and
+                    <span className="blue"> commitment!</span>
+                </h2>
+                <p>
+                    At Fire Masters, we're motivated and inspired every day by
+                    how our customers use our products to secure their people
+                    and business infrastructure
+                </p>
+            </div>
+
+            <div className="our__value__row flex">
+                {ourValue.map((value) => (
+                    <div key={value.id}>
+                        <img src={value.image} alt="" />
+                        <h4>{value.title}</h4>
+                        <p>{value.content}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+const AboutUs = () => {
+    return (
+        <section className="about__us">
+            <div className="about__us__wrapper fluid__container flex">
+                <div className="about__us__wrapper__left flex">
+                    <img src={AboutOne} alt="" />
+                    <img src={AboutTwo} alt="" />
+                </div>
+                <div className="about__us__wrapper__right">
+                    <h2 className="section__heading ">
+                        About <span className="blue">us!</span>
+                    </h2>
+                    <p>
+                        <strong>
+                            Fire Masters are closing on three decades of
+                            experience in the fire protection industry.
+                        </strong>
+                        <br />
+                        <br />
+                        Fire Masters Ltd is a leading re and security systems
+                        and services provider in Uganda, providing strategy,
+                        implementation, and operational solutions for clients
+                        managing the business and technology complexities.
+                        <br />
+                        <br />
+                        We have grown out of the recognition that a successful
+                        re and security solution must combine technical
+                        expertise with keen business skills, Technology and the
+                        ability to provide a rapid and focused response. Because
+                        of the varying demands placed on the market, Fire
+                        Masters Ltd are specialists in the provision of turnkey
+                        Solutions. <br />
+                        <br />
+                        We at Fire Masters Limited have been in business since
+                        1995. We are a fire protection engineering company,  we
+                        design, supply, install and maintain high-quality fire
+                        protection and fire fighting systems. We also undertake
+                        to design both security and safety systems and
+                        equipment.
+                    </p>
+                    <MainButton buttonName="Get in Touch" onClick={() => {}} />
+                </div>
+            </div>
+        </section>
+    );
+};
+
+const WorkWithUs = () => {
+    return (
+        <section className="work__with__us mt-100 fluid__container">
+            <div className="text__center heading">
+                <h2 className="section__heading ">
+                    Why <span className="blue">work</span> with us?
+                </h2>
+                <p>
+                    To deliver re and safety solutions that meet our customers’
+                    requirements and exceed their expectations. we shall do this
+                    by bringing together our experience and that of our global
+                    partners. We shall differentiate ourselves
+                </p>
+            </div>
+            <div className="flex work__with__us__images ">
+                <img src={FireExtinguisher} alt="" />
+                <img src={Group} alt="" />
+                <img src={FiremanMask} alt="" />
+            </div>
+            <div className="work__with__us__usp flex  text__center">
+                {workWithUsUSP.map((usp) => (
+                    <div key={usp.text}>
+                        <img src={usp.image} alt="" />
+                        <p>{usp.text}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+};
 export default Home;
