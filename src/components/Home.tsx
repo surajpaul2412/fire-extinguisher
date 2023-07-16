@@ -28,6 +28,8 @@ import Arrow from "../images/arrow.svg";
 import Logo from "../images/fire-masters-logo.png";
 import HeroFirefighter from "../images/hero-firefighter.png";
 
+import FireProtection from "../images/Fireprotection.png";
+
 const Home = () => {
     return (
         <section className="home">
@@ -209,7 +211,7 @@ const WorkWithUs = () => {
 };
 
 const OurServices = () => {
-    const [serviceImageUrl, setServiceImageUrl] = useState("");
+    const [serviceImageUrl, setServiceImageUrl] = useState(FireProtection);
 
     const onMouseHover = (url: string) => {
         setServiceImageUrl(url);
@@ -313,6 +315,14 @@ const Articles = () => {
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const scrollTop = () => {
+        const rootElement = document.documentElement;
+        // Scroll to top logic
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
     return (
         <footer>
             <div className="flex footer__first__row">
@@ -324,7 +334,7 @@ const Footer = () => {
                         belogi. FAR paratyp i muvåning, och pesask.
                     </p>
                 </div>
-                <button className="flex">
+                <button onClick={scrollTop} className="flex">
                     Go to top <img src={Arrow} alt="arrow" />
                 </button>
             </div>
