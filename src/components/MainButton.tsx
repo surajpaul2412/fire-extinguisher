@@ -1,19 +1,10 @@
 import React from "react";
 import Arrow from "../images/Arrow.svg";
 
-interface IButtonProps {
-    onClick: () => void;
-    buttonName: string;
-    classes?: string;
-}
-const MainButton = ({ onClick, classes = "", buttonName }: IButtonProps) => {
+const MainButton = () => {
     return (
-        <button
-            onClick={onClick}
-            className={`main__button ${classes}`}
-            type="button"
-        >
-            {buttonName}
+        <button className={`main__button `} type="button">
+            Get in touch
             <img src={Arrow} alt="Arrow" />
         </button>
     );

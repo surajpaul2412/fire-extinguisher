@@ -28,6 +28,12 @@ import Uganda from "../images/Uganda.png";
 import PAE from "../images/PAE.png";
 import Makerere from "../images/Makerere.png";
 
+import MainArticle from "../images/main-article.png";
+import HealthSafety from "../images/health-safety.png";
+import IncidentReporting from "../images/incident-reporting.png";
+import SafetyReview from "../images/safety-review.png";
+import TimeControl from "../images/time-control.png";
+
 export const Logos = [
     {
         image: Barclays,
@@ -143,5 +149,90 @@ export const projects = [
     {
         image: PAE,
         text: "Fire Detection Systems Inergen Automatic Fire Suppression Systems",
+    },
+];
+
+export const posts = [
+    {
+        image: MainArticle,
+        text: "Our mandatory PPEs include: Overalls, Hi-Vis vests, Safety shoes, Helmets, Transparent goggles, gloves and respirators. Other PPEs that are provided for specific tasks include: Safety harnesses, face shields, ear mus, etc.",
+        title: "Personal protective equipment (PPEs) is provided to staff carrying out any job.",
+    },
+    {
+        image: IncidentReporting,
+        text: "Our mandatory PPEs include: Overalls, Hi-Vis vests, Safety shoes, Helmets, Transparent goggles, gloves and respirators. Other PPEs that are provided.",
+        title: "Incident reporting and recording.",
+    },
+    {
+        image: SafetyReview,
+        text: "We continually review our safety processes. This is to identify any loop holes in our systems for continuous improvement. A rating is given at the end of the audit to show compliance or non-compliance",
+        title: "Safety Review/Audit",
+    },
+    {
+        image: HealthSafety,
+        text: "We are committed to the safety of the personnel and property in the environment we work in. We have a safety policy which is clearly communicated to all our staffs",
+        title: "HEALTH & SAFETY",
+    },
+    {
+        image: TimeControl,
+        text: "We complete and handover projects within the stipulated time, to the client's utmost satisfaction ensuring that very minimal works are to be aended to during defects liability period",
+        title: "TIME CONTROL",
+    },
+];
+
+export const footerMenu = [
+    {
+        text: "About",
+        link: "",
+    },
+    {
+        text: "Product & Services",
+        link: "",
+    },
+    {
+        text: "Projects Executed",
+        link: "",
+    },
+    {
+        text: "Accreditation",
+        link: "",
+    },
+];
+
+export const heroNumbers = [
+    {
+        number: "50+",
+        title: "Product & Services",
+    },
+    {
+        number: "200+",
+        title: "Project Executed",
+    },
+    {
+        number: "30+",
+        title: "Accreditation",
+    },
+];
+
+export const headerMenu = [
+    {
+        text: "Home",
+        link: "",
+    },
+    {
+        text: "About",
+        link: "",
+    },
+    {
+        text: "Product & Services",
+        link: "",
+    },
+    {
+        text: "Projects Executed",
+        link: "",
+    },
+    {
+        text: "Accreditation",
+        link: "",
     },
 ];

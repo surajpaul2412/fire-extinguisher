@@ -59,6 +59,13 @@ h5 {
     flex: 1;
 }
 
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
 .flex-col {
     flex-direction: column;
 }
@@ -91,19 +98,102 @@ h5 {
     margin-top: 70px;
 }
 
+.blue {
+    color: $headingGreen;
+    font-size: inherit;
+}
+
 .section__heading {
     font-size: 48px;
+}
 
-    .blue {
-        color: $headingGreen;
-        font-size: inherit;
+h1 {
+    font-size: 46px;
+}
+/* Header */
+
+header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px;
+
+    ul {
+        display: flex;
+        gap: 25px;
+        margin-left: auto;
+
+        li {
+            a {
+                color: $black;
+                font-size: 14px;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .main__button {
+        margin: 0;
+        margin-left: 40px;
+        background: $darkBlue;
+        color: $white;
+
+        img {
+            filter: invert(100%);
+        }
+    }
+}
+/* Hero */
+
+.hero {
+    background: url("../images/hero-bg.png") center bottom no-repeat;
+    background-size: cover;
+    min-height: 95dvh;
+    margin-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+
+    .hero__wrapper {
+        align-items: center;
+        gap: 50px;
+        color: $white;
+
+        > * {
+            flex: 1;
+        }
+
+        > img {
+            rotate: -7deg;
+        }
+
+        .hero__wrapper__left {
+            .hero__wrapper__left__numbers {
+                gap: 50px;
+                justify-content: center;
+                text-align: center;
+                margin-top: 70px;
+
+                span {
+                    font-size: 25px;
+                    margin-bottom: 10px;
+                    display: block;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
     }
 }
 
 /* Logos */
 .logos {
+    h5 {
+        margin-bottom: 70px;
+    }
     .slider__logos {
-        height: 100px;
+        height: 60px;
         object-fit: contain;
     }
 }
@@ -200,6 +290,7 @@ h5 {
     }
     .work__with__us__usp {
         gap: 15px;
+        flex-wrap: wrap;
         justify-content: center;
         > div {
             margin-bottom: 50px;
@@ -280,6 +371,91 @@ h5 {
 
             h5 {
                 margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* Articles */
+
+.articles {
+    .articles__posts {
+        gap: 50px;
+        flex-wrap: wrap;
+
+        > article {
+            width: calc(33% - 50px);
+
+            &:first-child {
+                width: calc(66% - 50px);
+            }
+
+            h6 {
+                font-size: 16px;
+                margin-top: 15px;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+/* Footer */
+
+footer {
+    padding: 100px 75px;
+
+    .footer__first__row {
+        justify-content: space-between;
+        align-items: start;
+
+        > div:first-child {
+            width: 50%;
+            p {
+                font-size: 16px;
+                margin-top: 25px;
+            }
+        }
+
+        > button {
+            align-items: center;
+            gap: 10px;
+            padding: 10px 35px;
+            background-color: $white;
+            cursor: pointer;
+            border: 1px solid $darkBlue;
+            box-shadow: 0px 0px 9px #1c3a5745;
+
+            img {
+                rotate: -90deg;
+            }
+        }
+    }
+
+    .footer__second__row {
+        margin-top: 50px;
+        justify-content: space-between;
+        ul {
+            display: flex;
+            li {
+                a {
+                    display: block;
+                    color: $black;
+                    padding: 0 25px;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: 700;
+                    border-right: 1px solid $darkBlue;
+                }
+
+                &:last-child {
+                    a {
+                        border: none;
+                    }
+                }
             }
         }
     }

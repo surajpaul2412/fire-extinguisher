@@ -4,8 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
     Logos,
+    footerMenu,
+    headerMenu,
+    heroNumbers,
     ourServices,
     ourValue,
+    posts,
     projects,
     workWithUsUSP,
 } from "../Constants/UIConstants";
@@ -20,9 +24,15 @@ import FireExtinguisher from "../images/extinguisher.png";
 import Group from "../images/group-of-people.png";
 import FiremanMask from "../images/fireman-with-mask.png";
 
+import Arrow from "../images/arrow.svg";
+import Logo from "../images/fire-masters-logo.png";
+import HeroFirefighter from "../images/hero-firefighter.png";
+
 const Home = () => {
     return (
         <section className="home">
+            <Header />
+            <Hero />
             <LogoCarousel />
             <Mission />
             <OurValue />
@@ -30,6 +40,8 @@ const Home = () => {
             <WorkWithUs />
             <OurServices />
             <Projects />
+            <Articles />
+            <Footer />
         </section>
     );
 };
@@ -158,7 +170,7 @@ const AboutUs = () => {
                         to design both security and safety systems and
                         equipment.
                     </p>
-                    <MainButton buttonName="Get in Touch" onClick={() => {}} />
+                    <MainButton />
                 </div>
             </div>
         </section>
@@ -257,7 +269,7 @@ const Projects = () => {
                         we shall do this by bringing together our experience and
                         that of our global partners
                     </p>
-                    <MainButton buttonName="Get in Touch" onClick={() => {}} />
+                    <MainButton />
                 </div>
                 <Slider {...settings}>
                     {projects.map((project) => (
@@ -272,6 +284,112 @@ const Projects = () => {
                 </Slider>
             </div>
         </section>
+    );
+};
+
+const Articles = () => {
+    return (
+        <section className="articles fluid__container mt-100">
+            <div className="text__center heading">
+                <h2 className="section__heading ">
+                    <span className="blue">Latest</span> articles <br />
+                    and Industry
+                    <span className="blue"> Highlights!</span>
+                </h2>
+            </div>
+
+            <div className="articles__posts flex">
+                {posts.map((post) => (
+                    <article key={post.title}>
+                        <img src={post.image} alt="" />
+                        <h6>{post.title}</h6>
+                        <p>{post.text}</p>
+                    </article>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+const Footer = () => {
+    const currentYear = new Date().getFullYear();
+    return (
+        <footer>
+            <div className="flex footer__first__row">
+                <div className="footer__first__row__left">
+                    <img src={Logo} alt="Fire masters logo" />
+                    <p>
+                        Lörem ipsum od ohet dilogi. Bell trabel, samuligt,
+                        ohöbel utom diska. Jinesade bel när feras redorade i
+                        belogi. FAR paratyp i muvåning, och pesask.
+                    </p>
+                </div>
+                <button className="flex">
+                    Go to top <img src={Arrow} alt="arrow" />
+                </button>
+            </div>
+
+            <div className="flex footer__second__row">
+                <ul className="footer__second__row__menu">
+                    {footerMenu.map((menu) => (
+                        <li key={menu.text}>
+                            <a href={menu.link}>{menu.text}</a>
+                        </li>
+                    ))}
+                </ul>
+                <div>
+                    {`© ${currentYear} All rights reserved by Fire Masters Ltd.`}
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+const Hero = () => {
+    return (
+        <section className="hero">
+            <div className="hero__wrapper fluid__container flex">
+                <div className="hero__wrapper__left">
+                    <h1>
+                        <span className="blue"> Ensuring Your Safety,</span>
+                        <br />
+                        Protecting Lives, <br />
+                        <span className="blue">with Fire Masters!</span>
+                    </h1>
+                    <p>
+                        Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat.
+                    </p>
+                    <MainButton />
+                    <div className="flex hero__wrapper__left__numbers">
+                        {heroNumbers.map((number) => (
+                            <div key={number.number}>
+                                <span>{number.number}</span>
+                                <p>{number.title}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <img src={HeroFirefighter} alt="firefighter" />
+            </div>
+        </section>
+    );
+};
+
+const Header = () => {
+    return (
+        <header className="flex">
+            <img src={Logo} alt="Fire masters logo" />
+            <ul>
+                {headerMenu.map((menu) => (
+                    <li key={menu.text}>
+                        <a href={menu.link}>{menu.text}</a>
+                    </li>
+                ))}
+            </ul>
+            <MainButton />
+        </header>
     );
 };
 export default Home;
