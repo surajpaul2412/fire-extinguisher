@@ -17,6 +17,17 @@ import Support from "../images/support.png";
 import Project from "../images/project-delivered.png";
 import Skilled from "../images/highly-skilled.png";
 
+import FireProtection from "../images/Fireprotection.png";
+import IconFire from "../Icons/IconFire";
+import IconCCTV from "../Icons/IconCCTV";
+import IconSecurity from "../Icons/IconSecurity";
+import IconConsultancy from "../Icons/IconConsultancy";
+
+import UnicefProject from "../images/UnicefProject.png";
+import Uganda from "../images/Uganda.png";
+import PAE from "../images/PAE.png";
+import Makerere from "../images/Makerere.png";
+
 export const Logos = [
     {
         image: Barclays,
@@ -90,5 +101,47 @@ export const workWithUsUSP = [
     {
         image: Business,
         text: "Business Structure Aligned to customer’s needs",
+    },
+];
+
+export const ourServices = [
+    {
+        text: "Fire Protection engineering",
+        icon: IconFire,
+        image: FireProtection,
+    },
+    {
+        text: "Security Systems",
+        icon: IconSecurity,
+        image: FireProtection,
+    },
+    {
+        text: "CCTV Systems",
+        icon: IconCCTV,
+        image: FireProtection,
+    },
+    {
+        text: "Consultancy",
+        icon: IconConsultancy,
+        image: FireProtection,
+    },
+];
+
+export const projects = [
+    {
+        image: UnicefProject,
+        text: "Fire Protection Systems FM200 Automatic Fire Suppression Systems Water systems",
+    },
+    {
+        image: Makerere,
+        text: "Fire Detection Systems Inergen Automatic Fire Suppression Systems",
+    },
+    {
+        image: Uganda,
+        text: "Fire Protection Systems FM200 Automatic Fire Suppression Systems Water systems",
+    },
+    {
+        image: PAE,
+        text: "Fire Detection Systems Inergen Automatic Fire Suppression Systems",
     },
 ];

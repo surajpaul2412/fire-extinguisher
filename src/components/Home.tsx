@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Logos, ourValue, workWithUsUSP } from "../Constants/UIConstants";
+import {
+    Logos,
+    ourServices,
+    ourValue,
+    projects,
+    workWithUsUSP,
+} from "../Constants/UIConstants";
 import "../Styles/root.scss";
 import Fireman from "../images/fire-man.png";
 import FiremanTwo from "../images/fire-man-two.png";
@@ -22,6 +28,8 @@ const Home = () => {
             <OurValue />
             <AboutUs />
             <WorkWithUs />
+            <OurServices />
+            <Projects />
         </section>
     );
 };
@@ -183,6 +191,85 @@ const WorkWithUs = () => {
                         <p>{usp.text}</p>
                     </div>
                 ))}
+            </div>
+        </section>
+    );
+};
+
+const OurServices = () => {
+    const [serviceImageUrl, setServiceImageUrl] = useState("");
+
+    const onMouseHover = (url: string) => {
+        setServiceImageUrl(url);
+    };
+    return (
+        <section className="our__services fluid__container pb-100">
+            <div className="text__center heading">
+                <h2 className="section__heading ">
+                    Our <span className="blue">Services</span>
+                </h2>
+                <p>
+                    To deliver re and safety solutions that meet our customers’
+                    requirements and exceed their expectations. we shall do this
+                    by bringing together our experience and that of our global
+                    partners
+                </p>
+            </div>
+
+            <div className="our__services__list flex">
+                <ul>
+                    {ourServices.map((service) => (
+                        <li
+                            onMouseEnter={() => onMouseHover(service.image)}
+                            key={service.text}
+                        >
+                            <service.icon />
+                            {service.text}
+                        </li>
+                    ))}
+                </ul>
+                <img src={serviceImageUrl} alt="" />
+            </div>
+        </section>
+    );
+};
+
+const Projects = () => {
+    const settings = {
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        vertical: true,
+        verticalSwiping: true,
+        arrows: false,
+    };
+    return (
+        <section className="projects">
+            <div className="projects__wrapper flex fluid__container">
+                <div className="heading">
+                    <h2 className="section__heading ">
+                        <span className="blue">Our</span> Major Projects
+                        <span className="blue"> Executed!</span>
+                    </h2>
+                    <p>
+                        To deliver re and safety solutions that meet our
+                        customers’ requirements and exceed their expectations.
+                        we shall do this by bringing together our experience and
+                        that of our global partners
+                    </p>
+                    <MainButton buttonName="Get in Touch" onClick={() => {}} />
+                </div>
+                <Slider {...settings}>
+                    {projects.map((project) => (
+                        <div
+                            className="flex projects__wrapper__project"
+                            key={project.text}
+                        >
+                            <img src={project.image} alt="" />
+                            <h5>{project.text}</h5>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </section>
     );
