@@ -1,5 +1,5 @@
 import React from "react";
-import Arrow from "../images/Arrow.svg";
+import Arrow from "../images/arrow.svg";
 
 const MainButton = () => {
     return (
