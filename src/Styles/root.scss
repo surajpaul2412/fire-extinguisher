@@ -95,7 +95,7 @@ li {
 }
 
 .mt-100 {
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .blue {
@@ -105,6 +105,16 @@ li {
 
 .section__heading {
     font-size: 48px;
+}
+
+input,
+button,
+textarea,
+select {
+    padding: 5px 0;
+    font: inherit;
+    border: none;
+    border-bottom: 1px solid;
 }
 
 h1 {
@@ -310,6 +320,9 @@ header {
     .products__tabpanel {
         gap: 50px;
         text-align: center;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
 
         > div {
             width: calc(33% - 50px);
@@ -325,6 +338,8 @@ header {
                 background: $white;
                 transform: translateY(85%);
                 transition: all 200ms ease-in;
+                display: flex;
+                flex-direction: column;
 
                 h5 {
                     font-size: 18px;
@@ -334,17 +349,33 @@ header {
                 }
                 ul {
                     font-size: 16px;
-                    margin-top: 10px;
+                    margin-top: 20px;
                     li {
                         display: flex;
-                        gap: 70px;
                         padding-bottom: 10px;
                         border-bottom: 0.5px solid;
                         padding-top: 10px;
-                        span {
+
+                        > span {
                             font-size: inherit;
+                            text-align: left;
+                            font-size: 14px;
+                            &:first-child {
+                                width: 150px;
+                                color: $textGray;
+                            }
                         }
                     }
+                }
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: $darkBlue;
+                    margin-top: auto;
+                    font-weight: 700;
+                    text-decoration: underline;
+                    cursor: pointer;
                 }
             }
 
@@ -352,6 +383,23 @@ header {
                 .products__tabpanel__product__overlay {
                     transform: translateY(0%);
                 }
+            }
+        }
+    }
+
+    .react-tabs__tab-list {
+        border: none;
+
+        .react-tabs__tab {
+            border: 0.5px solid $borderColor;
+            border-radius: 0;
+            padding: 14px 30px;
+
+            &.react-tabs__tab--selected {
+                background: $darkBlue;
+                border: 0.5px solid $borderColor;
+                color: $white;
+                font-weight: 700;
             }
         }
     }
@@ -457,6 +505,75 @@ header {
     }
 }
 
+/* Inquiry Form */
+
+.inquiry__form {
+    gap: 50px;
+    margin-top: 100px;
+
+    .inquiry__form__left {
+        padding: 40px 50px;
+        background-color: $darkBlue;
+        color: $white;
+        width: 40%;
+
+        ul {
+            margin-top: 50px;
+            li {
+                gap: 20px;
+                margin-bottom: 50px;
+            }
+        }
+
+        .inquiry__form__left__social {
+            justify-content: space-between;
+        }
+    }
+    .inquiry__form__formWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        width: 60%;
+
+        label {
+            margin-bottom: 15px;
+            color: $textGray;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        > div {
+            width: calc(50% - 50px);
+            display: flex;
+            flex-direction: column;
+
+            &.inquiry__form__formWrapper__message {
+                width: 100%;
+            }
+
+            &.radio__group {
+                > div {
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+
+                    label {
+                        display: flex;
+                        gap: 10px;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        button {
+            background-color: $darkBlue;
+            color: $white;
+            padding: 10px 40px;
+        }
+    }
+}
 /* Footer */
 
 footer {

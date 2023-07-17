@@ -4,16 +4,19 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { Formik, Field, Form, FormikHelpers } from "formik";
 
 import {
     Logos,
     footerMenu,
+    getInTouch,
     headerMenu,
     heroNumbers,
     ourServices,
     ourValue,
     posts,
     projects,
+    socialLinks,
     workWithUsUSP,
 } from "../Constants/UIConstants";
 import "../Styles/root.scss";
@@ -36,6 +39,16 @@ import Extinguishers from "../images/extinguishers.png";
 import RandomProduct from "../images/random-product.png";
 import WaterPipe from "../images/water-pipe.png";
 import WaterPipeRed from "../images/water-pipe-red.png";
+import { Value } from "sass";
+
+interface Values {
+    firstName: string;
+    lastName: string;
+    email: string;
+    number: string;
+    message: string;
+    subjects: "general inquiry" | "basic";
+}
 
 const Home = () => {
     return (
@@ -51,6 +64,7 @@ const Home = () => {
             <OurServices />
             <Projects />
             <Articles />
+            <InquiryForm />
             <Footer />
         </section>
     );
@@ -440,6 +454,22 @@ const Products = () => {
                     dimensions: "35.6 x 11.4 x 35.6 cm",
                     components: "1 Abc type fire extinguisher",
                 },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
             ],
         },
         {
@@ -453,11 +483,19 @@ const Products = () => {
                     dimensions: "35.6 x 11.4 x 35.6 cm",
                     components: "1 Abc type fire extinguisher",
                 },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
             ],
         },
     ];
     return (
-        <section className="products fluid__container">
+        <section className="products fluid__container pb-100">
             <div className="text__center heading">
                 <h2 className="section__heading ">
                     Our <span className="blue">Product</span> line <br />
@@ -483,25 +521,25 @@ const Products = () => {
                                         <p>{productContent.desc}</p>
                                         <ul>
                                             <li>
-                                                Weight
+                                                <span>Weight</span>
                                                 <span>
                                                     {productContent.weight}
                                                 </span>
                                             </li>
                                             <li>
-                                                Dimensions
+                                                <span>Dimensions</span>
                                                 <span>
                                                     {productContent.weight}
                                                 </span>
                                             </li>
                                             <li>
-                                                Components
+                                                <span>Components</span>
                                                 <span>
                                                     {productContent.weight}
                                                 </span>
                                             </li>
                                         </ul>
-                                        <button>Inquire Now</button>
+                                        <button>Inquire</button>
                                     </div>
                                 </div>
                             ))}
@@ -509,6 +547,119 @@ const Products = () => {
                     ))}
                 </Tabs>
             </div>
+        </section>
+    );
+};
+
+const InquiryForm = () => {
+    return (
+        <section
+            id="get-in-touch"
+            className="inquiry__form flex fluid__container mt-100"
+        >
+            <div className="inquiry__form__left">
+                <h3>Get in touch</h3>
+                <p>We are happy to help you!</p>
+                <ul>
+                    {getInTouch.map((touch) => (
+                        <li className="flex" key={touch.number}>
+                            <img src={touch.icon} alt="" />
+                            {touch.number}
+                        </li>
+                    ))}
+                </ul>
+                <div className="inquiry__form__left__social flex">
+                    {socialLinks.map((link) => (
+                        <a href={link.link}>
+                            <img src={link.icon} alt="" />
+                        </a>
+                    ))}
+                </div>
+            </div>
+            <Formik
+                initialValues={{
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    message: "",
+                    number: "",
+                    subjects: "general inquiry",
+                }}
+                onSubmit={(
+                    values: Values,
+                    { setSubmitting }: FormikHelpers<Values>
+                ) => {
+                    setTimeout(() => {
+                        alert(JSON.stringify(values, null, 2));
+                        setSubmitting(false);
+                    }, 500);
+                }}
+            >
+                <Form className="inquiry__form__formWrapper">
+                    <div>
+                        <label htmlFor="firstName">First Name</label>
+                        <Field
+                            id="firstName"
+                            name="firstName"
+                            placeholder="John"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="lastName">Last Name</label>
+                        <Field
+                            id="lastName"
+                            name="lastName"
+                            placeholder="Doe"
+                        />
+                    </div>
+
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <Field id="email" name="email" type="email" />
+                    </div>
+                    <div>
+                        <label htmlFor="mobile">Phone number</label>
+                        <Field id="mobile" name="mobile" type="tel" />
+                    </div>
+
+                    <div
+                        className="radio__group"
+                        role="group"
+                        aria-labelledby="my-radio-group"
+                    >
+                        <h5>Select subject</h5>
+                        <div>
+                            <label>
+                                <Field
+                                    type="radio"
+                                    name="subject"
+                                    value="general inquiry"
+                                />
+                                General Inquiry
+                            </label>
+                            <label>
+                                <Field
+                                    type="radio"
+                                    name="subject"
+                                    value="basic"
+                                />
+                                Basic
+                            </label>
+                        </div>
+                    </div>
+                    <div className="inquiry__form__formWrapper__message">
+                        <label htmlFor="message">Message</label>
+                        <Field
+                            id="message"
+                            name="message"
+                            placeholder="Type your message..."
+                            type="text"
+                        />
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </Form>
+            </Formik>
         </section>
     );
 };

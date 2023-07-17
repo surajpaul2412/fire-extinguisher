@@ -34,6 +34,15 @@ import IncidentReporting from "../images/incident-reporting.png";
 import SafetyReview from "../images/safety-review.png";
 import TimeControl from "../images/time-control.png";
 
+import Email from "../images/sharp-email.svg";
+import Location from "../images/location-filled.svg";
+import Call from "../images/phone-call.svg";
+
+import LinkedIn from "../images/Group 85.svg";
+import Twitter from "../images/Group 86.svg";
+import Instagram from "../images/Group 87.svg";
+import Facebook from "../images/Group 88.svg";
+
 export const Logos = [
     {
         image: Barclays,
@@ -234,5 +243,39 @@ export const headerMenu = [
     {
         text: "Accreditation",
         link: "",
+    },
+];
+
+export const getInTouch = [
+    {
+        icon: Call,
+        number: "+1012 3456 789",
+    },
+    {
+        icon: Email,
+        number: "demo@gmail.com",
+    },
+    {
+        icon: Location,
+        number: "132 Dartmouth Street Boston, Massachusetts 02156 United States",
+    },
+];
+
+export const socialLinks = [
+    {
+        icon: Facebook,
+        link: "facebook.com",
+    },
+    {
+        icon: Twitter,
+        link: "twitter.com",
+    },
+    {
+        icon: LinkedIn,
+        link: "linkedin.com",
+    },
+    {
+        icon: Instagram,
+        link: "instagram.com",
     },
 ];
