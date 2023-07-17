@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
 import {
     Logos,
     footerMenu,
@@ -29,6 +32,10 @@ import Logo from "../images/fire-masters-logo.png";
 import HeroFirefighter from "../images/hero-firefighter.png";
 
 import FireProtection from "../images/Fireprotection.png";
+import Extinguishers from "../images/extinguishers.png";
+import RandomProduct from "../images/random-product.png";
+import WaterPipe from "../images/water-pipe.png";
+import WaterPipeRed from "../images/water-pipe-red.png";
 
 const Home = () => {
     return (
@@ -40,6 +47,7 @@ const Home = () => {
             <OurValue />
             <AboutUs />
             <WorkWithUs />
+            <Products />
             <OurServices />
             <Projects />
             <Articles />
@@ -400,6 +408,108 @@ const Header = () => {
             </ul>
             <MainButton />
         </header>
+    );
+};
+
+const Products = () => {
+    const productsTabs = [
+        {
+            tabName: "Research",
+            products: [
+                {
+                    image: Extinguishers,
+                    title: "Fire Extinguisher",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: RandomProduct,
+                    title: "Random Product",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+        {
+            tabName: "Plan",
+            products: [
+                {
+                    image: RandomProduct,
+                    title: "Cow",
+                    desc: "",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+    ];
+    return (
+        <section className="products fluid__container">
+            <div className="text__center heading">
+                <h2 className="section__heading ">
+                    Our <span className="blue">Product</span> line <br />
+                </h2>
+            </div>
+            <div>
+                <Tabs>
+                    <TabList>
+                        {productsTabs.map((product) => (
+                            <Tab>{product.tabName}</Tab>
+                        ))}
+                    </TabList>
+                    {productsTabs.map((product) => (
+                        <TabPanel className="products__tabpanel flex">
+                            {product.products.map((productContent, index) => (
+                                <div
+                                    key={index}
+                                    className="products__tabpanel__product"
+                                >
+                                    <img src={productContent.image} alt="" />
+                                    <div className="products__tabpanel__product__overlay">
+                                        <h5>{productContent.title}</h5>
+                                        <p>{productContent.desc}</p>
+                                        <ul>
+                                            <li>
+                                                Weight
+                                                <span>
+                                                    {productContent.weight}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                Dimensions
+                                                <span>
+                                                    {productContent.weight}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                Components
+                                                <span>
+                                                    {productContent.weight}
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <button>Inquire Now</button>
+                                    </div>
+                                </div>
+                            ))}
+                        </TabPanel>
+                    ))}
+                </Tabs>
+            </div>
+        </section>
     );
 };
 export default Home;
