@@ -22,7 +22,7 @@ import {
 import "../Styles/root.scss";
 import Fireman from "../images/fire-man.png";
 import FiremanTwo from "../images/fire-man-two.png";
-import FireHelmet from "../images/fire-helmets.png";
+import FireHelmet from "../images/fire-helmets.webp";
 import AboutOne from "../images/about-us-1.png";
 import AboutTwo from "../images/about-us-2.png";
 import MainButton from "./MainButton";
@@ -40,6 +40,7 @@ import RandomProduct from "../images/random-product.png";
 import WaterPipe from "../images/water-pipe.png";
 import WaterPipeRed from "../images/water-pipe-red.png";
 import { Value } from "sass";
+import IconDivider from "../Icons/IconDivider";
 
 interface Values {
     firstName: string;
@@ -65,6 +66,7 @@ const Home = () => {
             <Projects />
             <Articles />
             <InquiryForm />
+            <IconDivider />
             <Footer />
         </section>
     );
@@ -74,7 +76,7 @@ const LogoCarousel = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 600,
+        speed: 300,
         autoplay: true,
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -98,29 +100,37 @@ const Mission = () => {
         <div className="mission pb-100">
             <div className="mission__row__one">
                 <img src={FireHelmet} alt="Fireman" />
-                <div className="mission__row__one__text flex flex-col blueBg">
-                    <h3>OUR MISSION</h3>
-                    <p>
-                        To deliver Fire and security solutions that meet our
-                        customers’ requirements and exceed their expectations.
-                        We shall do this by bringing together our own experience
-                        and that of our global partners. <br />
-                        <br />
-                        ‘We shall differentiate our selves by not just being a
-                        supplier, but by being a long-term partner.’
-                    </p>
+                <div>
+                    <div className="mission__row__one__text flex flex-col blueBg">
+                        <h3>OUR MISSION</h3>
+                        <p>
+                            To deliver Fire and security solutions that meet our
+                            customers’ requirements and exceed their
+                            expectations. We shall do this by bringing together
+                            our own experience and that of our global partners.{" "}
+                            <br />
+                            <br />
+                            ‘We shall differentiate our selves by not just being
+                            a supplier, but by being a long-term partner.’
+                        </p>
+                    </div>
                 </div>
             </div>
             <div className="mission__row__two flex">
-                <div className="mission__row__one__text blueBg flex flex-col">
-                    <h3>OUR VISION</h3>
-                    <p>
-                        To be the leading provider of fire and security
-                        solutions in East Africa
-                    </p>
+                <div>
+                    <div className="mission__row__one__text blueBg flex flex-col">
+                        <h3>OUR VISION</h3>
+                        <p>
+                            To be the leading provider of fire and security
+                            solutions in East Africa
+                        </p>
+                    </div>
                 </div>
-                <img src={Fireman} alt="Fireman" />
-                <img src={FiremanTwo} alt="Fireman" />
+
+                <div>
+                    <img src={Fireman} alt="Fireman" />
+                    <img src={FiremanTwo} alt="Fireman" />
+                </div>
             </div>
         </div>
     );
@@ -173,14 +183,14 @@ const AboutUs = () => {
                         </strong>
                         <br />
                         <br />
-                        Fire Masters Ltd is a leading re and security systems
+                        Fire Masters Ltd is a leading fire and security systems
                         and services provider in Uganda, providing strategy,
                         implementation, and operational solutions for clients
                         managing the business and technology complexities.
                         <br />
                         <br />
                         We have grown out of the recognition that a successful
-                        re and security solution must combine technical
+                        fire and security solution must combine technical
                         expertise with keen business skills, Technology and the
                         ability to provide a rapid and focused response. Because
                         of the varying demands placed on the market, Fire

@@ -107,6 +107,10 @@ li {
     font-size: 48px;
 }
 
+.divider {
+    margin: 150px auto 30px;
+}
+
 input,
 button,
 textarea,
@@ -203,7 +207,7 @@ header {
         margin-bottom: 70px;
     }
     .slider__logos {
-        height: 60px;
+        height: 150px;
         object-fit: contain;
     }
 }
@@ -215,7 +219,8 @@ header {
         display: flex;
         gap: 10px;
         > * {
-            flex: 1;
+            flex: 1 1 100%;
+            width: calc(50% - 10px);
         }
     }
 
@@ -224,13 +229,22 @@ header {
         background-color: $darkBlue;
         color: $white;
         justify-content: center;
+        height: 100%;
     }
 
     .mission__row__two {
         gap: 10px;
         margin-top: 10px;
-        > *:not(:last-child) {
-            flex: 1;
+        > * {
+            flex: 1 1 100%;
+        }
+
+        > div:last-child {
+            display: flex;
+            gap: 10px;
+            img {
+                width: 100%;
+            }
         }
     }
 }
@@ -250,7 +264,6 @@ header {
             font-weight: bold;
         }
         p {
-            color: $textGray;
             font-size: 16px;
         }
     }
@@ -261,7 +274,7 @@ header {
 .about__us {
     background: url("../images/blueBg-vector.png") center center no-repeat;
     padding: 100px 0;
-    background-size: cover;
+    background-size: contain;
     .about__us__wrapper {
         gap: 50px;
         color: $white;
@@ -512,10 +525,10 @@ header {
     margin-top: 100px;
 
     .inquiry__form__left {
-        padding: 40px 50px;
+        padding: 40px 60px;
         background-color: $darkBlue;
         color: $white;
-        width: 40%;
+        width: 45%;
 
         ul {
             margin-top: 50px;
