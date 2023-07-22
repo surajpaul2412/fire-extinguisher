@@ -43,6 +43,9 @@ import IconDivider from "../Icons/IconDivider";
 import IconHamburger from "../Icons/IconHamburger";
 import IconClose from "../Icons/IconClose";
 
+import Certificate from "../images/certificate.png";
+import CertificateIcon from "../images/certificate-icon.svg";
+
 interface Values {
     firstName: string;
     lastName: string;
@@ -65,6 +68,7 @@ const Home = () => {
             <Products />
             <OurServices />
             <Projects />
+            <Certification />
             <Articles />
             <InquiryForm />
             <IconDivider />
@@ -722,6 +726,19 @@ const InquiryForm = () => {
                     <button type="submit">Send Message</button>
                 </Form>
             </Formik>
+        </section>
+    );
+};
+
+const Certification = () => {
+    return (
+        <section className="certification flex fluid__container mt-100">
+            <img src={Certificate} alt="" />
+            <div>
+                <img src={CertificateIcon} alt="" />
+                <h4>NATIONAL fire protection association</h4>
+                <p>2008</p>
+            </div>
         </section>
     );
 };

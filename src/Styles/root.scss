@@ -44,11 +44,11 @@ h6 {
 }
 
 h3 {
-    font-size: 40px;
+    font-size: clamp(28px, 4vw, 40px);
 }
 
 h4 {
-    font-size: 24px;
+    font-size: clamp(24px, 4vw, 24px);
 }
 h5 {
     font-size: 21px;
@@ -110,7 +110,7 @@ li {
 }
 
 .section__heading {
-    font-size: 48px;
+    font-size: clamp(30px, 4vw, 48px);
 }
 
 .divider {
@@ -128,7 +128,7 @@ select {
 }
 
 h1 {
-    font-size: 46px;
+    font-size: clamp(32px, 5vw, 52px);
 }
 /* Header */
 
@@ -164,9 +164,6 @@ header {
     .header__desktop {
         display: flex;
         align-items: center;
-    }
-    .header__mobile {
-        display: none;
     }
 }
 /* Hero */
@@ -347,7 +344,6 @@ header {
     .products__tabpanel {
         gap: 50px;
         text-align: center;
-        margin-top: 50px;
         flex-wrap: wrap;
         justify-content: center;
 
@@ -416,6 +412,7 @@ header {
 
     .react-tabs__tab-list {
         border: none;
+        margin-bottom: 50px;
 
         .react-tabs__tab {
             border: 0.5px solid $borderColor;
@@ -528,6 +525,25 @@ header {
     }
 }
 
+/* Certification */
+
+.certification {
+    gap: 50px;
+    margin-bottom: 150px;
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h4 {
+            margin-bottom: 10px;
+        }
+        > img {
+            width: 10%;
+            margin-block-end: 10px;
+        }
+    }
+}
 /* Articles */
 
 .articles {
@@ -763,12 +779,14 @@ footer {
             flex-direction: column;
 
             > div:last-child {
-                flex-direction: column;
+                img {
+                    width: 65%;
+                }
             }
         }
 
         .blueBg {
-            padding: 20px;
+            padding: 70px 20px;
         }
     }
 
@@ -784,18 +802,17 @@ footer {
     /* About us */
 
     .about__us {
+        padding: 100px 20px;
         .about__us__wrapper {
             flex-direction: column;
-
             .about__us__wrapper__left {
-                flex-direction: column;
                 img {
                     position: relative;
+                    width: 45%;
                 }
             }
 
             .about__us__wrapper__right {
-                padding: 0 20px;
             }
         }
     }
@@ -804,7 +821,13 @@ footer {
 
     .work__with__us {
         .work__with__us__images {
-            flex-direction: column;
+            > img {
+                object-fit: cover;
+                &:nth-child(1),
+                &:nth-child(3) {
+                    width: 25%;
+                }
+            }
         }
         .work__with__us__usp {
             > div {
@@ -816,6 +839,7 @@ footer {
     /* products */
 
     .products {
+        padding: 70px 20px;
         .products__tabpanel {
             flex-direction: column;
             > div {
@@ -835,7 +859,12 @@ footer {
     /* projects */
 
     .projects {
-        padding: 70px 20px;
+        padding: 100px 20px;
+
+        &::before,
+        &::after {
+            height: 3%;
+        }
         .projects__wrapper {
             flex-direction: column;
 
@@ -845,10 +874,17 @@ footer {
         }
     }
 
+    /* Certification */
+    .certification {
+        padding: 20px;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
     /* Articles */
 
     .articles {
         .articles__posts {
+            gap: 20px;
             article {
                 width: 100%;
                 padding: 20px;
@@ -903,5 +939,11 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    .header__mobile {
+        display: none;
     }
 }
