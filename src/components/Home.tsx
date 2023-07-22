@@ -39,8 +39,9 @@ import Extinguishers from "../images/extinguishers.png";
 import RandomProduct from "../images/random-product.png";
 import WaterPipe from "../images/water-pipe.png";
 import WaterPipeRed from "../images/water-pipe-red.png";
-import { Value } from "sass";
 import IconDivider from "../Icons/IconDivider";
+import IconHamburger from "../Icons/IconHamburger";
+import IconClose from "../Icons/IconClose";
 
 interface Values {
     firstName: string;
@@ -80,6 +81,16 @@ const LogoCarousel = () => {
         autoplay: true,
         slidesToShow: 5,
         slidesToScroll: 1,
+
+        responsive: [
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
     return (
         <div className="logos pb-100">
@@ -423,15 +434,56 @@ const Header = () => {
     return (
         <header className="flex">
             <img src={Logo} alt="Fire masters logo" />
-            <ul>
-                {headerMenu.map((menu) => (
-                    <li key={menu.text}>
-                        <a href={menu.link}>{menu.text}</a>
-                    </li>
-                ))}
-            </ul>
-            <MainButton />
+            <div className="header__desktop">
+                <ul>
+                    {headerMenu.map((menu) => (
+                        <li key={menu.text}>
+                            <a href={menu.link}>{menu.text}</a>
+                        </li>
+                    ))}
+                </ul>
+                <MainButton />
+            </div>
+
+            <div className="header__mobile">
+                <MobileHeader />
+            </div>
         </header>
+    );
+};
+
+const MobileHeader = () => {
+    const onToggleMenu = (isClose = false) => {
+        const mobileMenuWrapper = document.querySelector(
+            ".mobile__menu__wrapper"
+        );
+        if (mobileMenuWrapper && !isClose) {
+            mobileMenuWrapper.classList.add("show");
+            mobileMenuWrapper.classList.remove("hide");
+            document.body.classList.add("stop__overflow");
+        } else if (mobileMenuWrapper) {
+            mobileMenuWrapper.classList.add("hide");
+            mobileMenuWrapper.classList.remove("show");
+            document.body.classList.remove("stop__overflow");
+        }
+    };
+
+    return (
+        <>
+            <div onClick={() => onToggleMenu()}>
+                <IconHamburger />
+            </div>
+            <div className="mobile__menu__wrapper hide">
+                <ul>
+                    {headerMenu.map((menu) => (
+                        <li key={menu.text}>
+                            <a href={menu.link}>{menu.text}</a>
+                        </li>
+                    ))}
+                </ul>
+                <IconClose onClick={() => onToggleMenu(true)} />
+            </div>
+        </>
     );
 };
 
