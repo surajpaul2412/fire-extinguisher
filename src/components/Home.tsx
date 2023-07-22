@@ -459,7 +459,7 @@ const Header = () => {
 const MobileHeader = () => {
     const onToggleMenu = (isClose = false) => {
         const mobileMenuWrapper = document.querySelector(
-            ".mobile__menu__wrapper"
+            ".mobile__menu__wrapper__in"
         );
         if (mobileMenuWrapper && !isClose) {
             mobileMenuWrapper.classList.add("show");
@@ -477,15 +477,17 @@ const MobileHeader = () => {
             <div onClick={() => onToggleMenu()}>
                 <IconHamburger />
             </div>
-            <div className="mobile__menu__wrapper hide">
-                <ul>
-                    {headerMenu.map((menu) => (
-                        <li key={menu.text}>
-                            <a href={menu.link}>{menu.text}</a>
-                        </li>
-                    ))}
-                </ul>
-                <IconClose onClick={() => onToggleMenu(true)} />
+            <div className="mobile__menu__wrapper">
+                <div className="mobile__menu__wrapper__in hide">
+                    <ul>
+                        {headerMenu.map((menu) => (
+                            <li key={menu.text}>
+                                <a href={menu.link}>{menu.text}</a>
+                            </li>
+                        ))}
+                    </ul>
+                    <IconClose onClick={() => onToggleMenu(true)} />
+                </div>
             </div>
         </>
     );
