@@ -334,7 +334,7 @@ const Projects = () => {
 
 const Articles = () => {
     return (
-        <section className="articles fluid__container mt-100">
+        <section className="articles fluid__container">
             <div className="text__center heading">
                 <h2 className="section__heading ">
                     <span className="blue">Latest</span> articles <br />

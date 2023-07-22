@@ -476,14 +476,37 @@ header {
 /* Projects */
 
 .projects {
-    padding: 100px;
+    padding: 0 100px;
     background-image: url("../images/gray-vector-bg.png");
     background-color: $darkBlue;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     color: $white;
+    position: relative;
+    padding-block: 200px;
 
+    &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 15%;
+        background-color: white;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 15%;
+        background-color: white;
+        clip-path: polygon(100% 0, 0% 100.5%, 100% 100%);
+        bottom: 0;
+        right: 0;
+    }
     .projects__wrapper {
         gap: 50px;
         align-items: center;
@@ -508,6 +531,7 @@ header {
 /* Articles */
 
 .articles {
+    margin-block-start: 50px;
     .articles__posts {
         gap: 50px;
         flex-wrap: wrap;
