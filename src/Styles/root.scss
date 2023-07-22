@@ -134,7 +134,6 @@ h1 {
 
 header {
     justify-content: space-between;
-    align-items: center;
     padding: 20px 45px;
 
     ul {
@@ -160,6 +159,14 @@ header {
         img {
             filter: invert(100%);
         }
+    }
+
+    .header__desktop {
+        display: flex;
+        align-items: center;
+    }
+    .header__mobile {
+        display: none;
     }
 }
 /* Hero */
