@@ -317,7 +317,7 @@ const Projects = () => {
                     </p>
                     <MainButton />
                 </div>
-                <Slider {...settings}>
+                {/* <Slider {...settings}>
                     {projects.map((project) => (
                         <div
                             className="flex projects__wrapper__project"
@@ -327,7 +327,30 @@ const Projects = () => {
                             <h5>{project.text}</h5>
                         </div>
                     ))}
-                </Slider>
+                </Slider> */}
+
+                <div class="container-slider">
+                    <section class="gallery">
+                        {projects.map((project) => (
+                            <div
+                                className="flex projects__wrapper__project"
+                                key={project.text}
+                            >
+                                <img src={project.image} alt="" />
+                                <h5>{project.text}</h5>
+                            </div>
+                        ))}
+                        {projects.map((project) => (
+                            <div
+                                className="flex projects__wrapper__project"
+                                key={project.text}
+                            >
+                                <img src={project.image} alt="" />
+                                <h5>{project.text}</h5>
+                            </div>
+                        ))}
+                    </section>
+                </div>
             </div>
         </section>
     );
