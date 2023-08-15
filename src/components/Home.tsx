@@ -22,7 +22,7 @@ import {
 import "../Styles/root.scss";
 import Fireman from "../images/fire-man.png";
 import FiremanTwo from "../images/fire-man-two.png";
-import FireHelmet from "../images/fire-helmets.webp";
+import FireHelmet from "../images/unity.webp";
 import AboutOne from "../images/about-us-1.png";
 import AboutTwo from "../images/about-us-2.png";
 import MainButton from "./MainButton";
@@ -43,7 +43,7 @@ import IconDivider from "../Icons/IconDivider";
 import IconHamburger from "../Icons/IconHamburger";
 import IconClose from "../Icons/IconClose";
 
-import Certificate from "../images/certificate.png";
+import Certificate from "../images/IFE Certification.webp";
 import CertificateIcon from "../images/certificate-icon.svg";
 
 interface Values {
@@ -69,7 +69,6 @@ const Home = () => {
             <OurServices />
             <Projects />
             <Certification />
-            <Articles />
             <InquiryForm />
             <IconDivider />
             <Footer />
@@ -119,14 +118,10 @@ const Mission = () => {
                     <div className="mission__row__one__text flex flex-col blueBg">
                         <h3>OUR MISSION</h3>
                         <p>
-                            To deliver Fire and security solutions that meet our
-                            customers’ requirements and exceed their
-                            expectations. We shall do this by bringing together
-                            our own experience and that of our global partners.{" "}
-                            <br />
-                            <br />
-                            ‘We shall differentiate our selves by not just being
-                            a supplier, but by being a long-term partner.’
+                            Closing on Three decades, Fire Masters Limited has
+                            been the trailblazer in providing Fire protection
+                            engineering services to serve the needs of thousands
+                            of Ugandans.
                         </p>
                     </div>
                 </div>
@@ -136,8 +131,10 @@ const Mission = () => {
                     <div className="mission__row__one__text blueBg flex flex-col">
                         <h3>OUR VISION</h3>
                         <p>
-                            To be the leading provider of fire and security
-                            solutions in East Africa
+                            Since 1995, the Company has been operated under its
+                            current administration and has grown into a one-stop
+                            shop for specialised Fire Protection Equipment &
+                            Services.
                         </p>
                     </div>
                 </div>
@@ -336,30 +333,6 @@ const Projects = () => {
     );
 };
 
-const Articles = () => {
-    return (
-        <section className="articles fluid__container">
-            <div className="text__center heading">
-                <h2 className="section__heading ">
-                    <span className="blue">Latest</span> articles <br />
-                    and Industry
-                    <span className="blue"> Highlights!</span>
-                </h2>
-            </div>
-
-            <div className="articles__posts flex">
-                {posts.map((post) => (
-                    <article key={post.title}>
-                        <img src={post.image} alt="" />
-                        <h6>{post.title}</h6>
-                        <p>{post.text}</p>
-                    </article>
-                ))}
-            </div>
-        </section>
-    );
-};
-
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const scrollTop = () => {
@@ -375,11 +348,7 @@ const Footer = () => {
             <div className="flex footer__first__row">
                 <div className="footer__first__row__left">
                     <img src={Logo} alt="Fire masters logo" />
-                    <p>
-                        Lörem ipsum od ohet dilogi. Bell trabel, samuligt,
-                        ohöbel utom diska. Jinesade bel när feras redorade i
-                        belogi. FAR paratyp i muvåning, och pesask.
-                    </p>
+                    <p>Leading the fight against Fire</p>
                 </div>
                 <button onClick={scrollTop} className="flex">
                     Go to top <img src={Arrow} alt="arrow" />
@@ -413,11 +382,7 @@ const Hero = () => {
                         Protecting Lives, <br />
                         <span className="blue">with Fire Masters!</span>
                     </h1>
-                    <p>
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat.
-                    </p>
+
                     <MainButton />
                     <div className="flex hero__wrapper__left__numbers">
                         {heroNumbers.map((number) => (
@@ -496,7 +461,7 @@ const MobileHeader = () => {
 const Products = () => {
     const productsTabs = [
         {
-            tabName: "Research",
+            tabName: "Extinguishers",
             products: [
                 {
                     image: Extinguishers,
@@ -541,7 +506,112 @@ const Products = () => {
             ],
         },
         {
-            tabName: "Plan",
+            tabName: "Detection Systems",
+            products: [
+                {
+                    image: RandomProduct,
+                    title: "Cow",
+                    desc: "",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+        {
+            tabName: "Water Systems",
+            products: [
+                {
+                    image: RandomProduct,
+                    title: "Cow",
+                    desc: "",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+        {
+            tabName: "Fire Suppression",
+            products: [
+                {
+                    image: RandomProduct,
+                    title: "Cow",
+                    desc: "",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+        {
+            tabName: "Fire Training",
+            products: [
+                {
+                    image: RandomProduct,
+                    title: "Cow",
+                    desc: "",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+        {
+            tabName: "Security Systems",
+            products: [
+                {
+                    image: RandomProduct,
+                    title: "Cow",
+                    desc: "",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+                {
+                    image: WaterPipe,
+                    title: "Water pipe",
+                    desc: "Randm text somewhere",
+                    weight: "3 kg 500g",
+                    dimensions: "35.6 x 11.4 x 35.6 cm",
+                    components: "1 Abc type fire extinguisher",
+                },
+            ],
+        },
+        {
+            tabName: "Safety Equipment",
             products: [
                 {
                     image: RandomProduct,
@@ -709,9 +779,25 @@ const InquiryForm = () => {
                                 <Field
                                     type="radio"
                                     name="subject"
-                                    value="basic"
+                                    value="survey"
                                 />
-                                Basic
+                                Schedule a survey
+                            </label>
+                            <label>
+                                <Field
+                                    type="radio"
+                                    name="subject"
+                                    value="survey"
+                                />
+                                Consultancy
+                            </label>
+                            <label>
+                                <Field
+                                    type="radio"
+                                    name="subject"
+                                    value="survey"
+                                />
+                                Product purchase
                             </label>
                         </div>
                     </div>
@@ -735,11 +821,13 @@ const InquiryForm = () => {
 const Certification = () => {
     return (
         <section className="certification flex fluid__container mt-100">
-            <img src={Certificate} alt="" />
+            <div>
+                <img src={Certificate} alt="" />
+            </div>
             <div>
                 <img src={CertificateIcon} alt="" />
-                <h4>NATIONAL fire protection association</h4>
-                <p>2008</p>
+                <h4>The Institute of Fire Engineers</h4>
+                <p>2015</p>
             </div>
         </section>
     );

@@ -187,6 +187,9 @@ header {
 
         > img {
             rotate: -7deg;
+            position: relative;
+            top: -15px;
+            width: 50%;
         }
 
         .hero__wrapper__left {
@@ -417,7 +420,8 @@ header {
         .react-tabs__tab {
             border: 0.5px solid $borderColor;
             border-radius: 0;
-            padding: 14px 30px;
+            padding: 12px 24px;
+            font-size: 16px;
 
             &.react-tabs__tab--selected {
                 background: $darkBlue;
@@ -534,6 +538,7 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        flex: 1;
 
         h4 {
             margin-bottom: 10px;
@@ -541,6 +546,12 @@ header {
         > img {
             width: 10%;
             margin-block-end: 10px;
+        }
+        &:first-child {
+            align-items: center;
+            > img {
+                width: 60%;
+            }
         }
     }
 }
@@ -609,7 +620,10 @@ header {
             font-weight: 700;
         }
         > div {
-            width: calc(50% - 50px);
+            &:not(.radio__group) {
+                width: calc(50% - 50px);
+            }
+
             display: flex;
             flex-direction: column;
 

@@ -5,8 +5,8 @@ import Hima from "../images/hima.png";
 import Japan from "../images/japan.png";
 import NH from "../images/nh.png";
 import Unicef from "../images/unicef.png";
-import Individual from "../images/individual.png";
-import Client from "../images/clients.png";
+import Individual from "../images/individuals.webp";
+import Client from "../images/clients.webp";
 
 import Transparent from "../images/transparent.png";
 import ISP from "../images/ISP.png";
@@ -17,7 +17,9 @@ import Support from "../images/support.png";
 import Project from "../images/project-delivered.png";
 import Skilled from "../images/highly-skilled.png";
 
-import FireProtection from "../images/Fireprotection.png";
+import FireProtection from "../images/fire-protection.webp";
+import SecuritySystem from "../images/secuity-system.webp";
+
 import IconFire from "../Icons/IconFire";
 import IconCCTV from "../Icons/IconCCTV";
 import IconSecurity from "../Icons/IconSecurity";
@@ -249,15 +251,15 @@ export const headerMenu = [
 export const getInTouch = [
     {
         icon: Call,
-        number: "+1012 3456 789",
+        number: "+256 750 073 014, +256 393 278 750, +256 414 258 912",
     },
     {
         icon: Email,
-        number: "demo@gmail.com",
+        number: "info@firemasters.co.ug, customer_care@firemasters.co.ug",
     },
     {
         icon: Location,
-        number: "132 Dartmouth Street Boston, Massachusetts 02156 United States",
+        number: "Plot 100-101 Prince Badru Kakungulu Road Kibuli, Kampala, Uganda",
     },
 ];
 
